@@ -77,6 +77,21 @@
   }
 }
 
+
+.di-underline-hover {
+    transition: border-color 300ms ease;
+    border-block-end: 2px solid transparent;
+    text-decoration: none;
+  &:hover,
+  &:focus {
+    outline: none;
+    border-inline: none;
+    border-block-start: none;
+    border-block-end: 2px solid currentcolor;
+    text-decoration: none;
+  }
+}
+
 /* Can combine this with overflow-hidden to make background images grow on hover
  * even if you are using background-size: cover */
 

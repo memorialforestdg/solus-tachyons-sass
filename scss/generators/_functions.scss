@@ -17,3 +17,22 @@
 @function starts-with($string, $substr) {
   @return string.slice($string, 1, string.length($substr)) == $substr;
 }
+
+
+// Check if two stings are equal
+//
+// @param {String} $string1 - The first string to be checked.
+// @param {String} $string2 - The second string to be checked.
+// @return {Boolean} - Returns `true` if the strings are equal, `false` otherwise.
+@function equals($string1, $string2) {
+  @return string.quote($string1) == string.quote($string2);
+}
+
+// Check if a string contains another string
+//
+// @param {String} $string - The string to be checked.
+// @param {String} $substr - The substring to be checked for.
+// @return {Boolean} - Returns `true` if the string contains the substring, `false` otherwise.
+@function contains($string, $substr) {
+  @return string.index($string, $substr) != null;
+}

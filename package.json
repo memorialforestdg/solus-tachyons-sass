@@ -13,17 +13,17 @@
     "scripts": {
         "migrate": "sass-migrator --migrate-deps module --forward=all tachyons.scss",
         "build": "run-s build:css build:minify prettier:css",
-        "build:css": "sass tachyons.scss ./css/tachyons.css",
-        "build:minify": "sass --style=compressed tachyons.scss css/tachyons.min.css --style=compressed",
-        "build:watch": "sass --watch tachyons.scss css/tachyons.css",
-        "prettier:css": "prettier --write css/tachyons.css",
+        "build:css": "sass tachyons.scss ../../src/styles/tachyons.css",
+        "build:minify": "sass --style=compressed tachyons.scss ../../src/styles/tachyons.min.css --style=compressed",
+        "dev": "sass --watch tachyons.scss ../../src/styles/tachyons.css",
+        "prettier:css": "prettier --write ../../src/styles/tachyons.css",
         "lint:js": "standard --fix",
         "lint:css": "stylelint \"**/*.scss\"",
         "lint:css-fix": "stylelint \"**/*.scss\" --fix",
-        "mutations": "immutable-css css/tachyons.css --strict",
+        "mutations": "immutable-css ../../src/styles/tachyons.css --strict",
         "start": "npm run build:watch",
         "test": "ava",
-        "wallace": "cat css/tachyons.css | wallace --verbose"
+        "wallace": "cat ../../src/styles/tachyons.css | wallace --verbose"
     },
     "repository": "tachyons-haru/tachyons-sass-haru",
     "keywords": [

@@ -9,41 +9,43 @@ $breakpoints: (
   "ns": $breakpoint-not-small,
   "m": $breakpoint-medium,
   "l": $breakpoint-large,
-) !default;
+  ) !default;
 
 // Typography
-$sans-serif: -apple-system, blinkmacsystemfont, "avenir next", avenir, helvetica,
-  "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif !default;
-$serif: georgia, serif !default;
-$code: consolas, monaco, monospace !default;
-$courier: "'Courier Next'", courier, monospace;
-$helvetica: "'helvetica neue'", helvetica, sans-serif;
-$avenir: "'avenir next'", avenir, sans-serif;
-$athelas: athelas, georga, serif;
-$georga: georgia, serif;
-$times: times, serif;
-$bodoni: "'Bodoni MT'", serif;
-$calisto: "'Calisto MT'", serif;
-$garamond: garamond, serif;
-$baskerville: baskerville, serif;
+$sans-serif: "Nunito",
+  -apple-system,
+  BlinkMacSystemFont,
+  "avenir next",
+  avenir,
+  "segoe ui",
+  "helvetica neue",
+  helvetica,
+  Cantarell,
+  Ubuntu,
+  roboto,
+  noto,
+  arial,
+  sans-serif;
+$serif: "Lora",
+  "Iowan Old Style",
+  "Times New Roman",
+  Baskerville,
+  "Droid Serif",
+  Times,
+  "Source Serif Pro",
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  serif;
+$code: consolas,
+  monaco,
+  monospace !default;
 
 $font-families: (
-  "sans-serif": $sans-serif,
+  "sans": $sans-serif,
   "serif": $serif,
-  "system-sans-serif": sans-serif,
-  "system-serif": serif,
   "monospace": $code,
-  "courier": $courier,
-  "helvetica": $helvetica,
-  "avenir": $avenir,
-  "athelas": $athelas,
-  "georgia": $georga,
-  "times": $times,
-  "bodoni": $bodoni,
-  "calisto": $calisto,
-  "garamond": $garamond,
-  "baskerville": $baskerville,
-) !default;
+  ) !default;
 
 $type-scales: (
   "f-headline": 6rem,
@@ -55,7 +57,7 @@ $type-scales: (
   "f5": 1rem,
   "f6": 0.875rem,
   "f7": 0.75rem,
-) !default;
+  ) !default;
 
 $font-weights: (
   "fw1": 100,
@@ -67,38 +69,38 @@ $font-weights: (
   "fw7": 700,
   "fw8": 800,
   "fw9": 900,
-) !default;
+  ) !default;
 
 $letter-spacings: (
   "ls-tight": -0.05em,
   "ls-1": 0.1em,
   "letter-spacing-2": 0.25em,
-) !default;
+  ) !default;
 
 $line-heights: (
   "lh-solid": 1,
   "lh-title": 1.25,
   "lh-copy": 1.5,
-) !default;
+  ) !default;
 
 $measures: (
-  "measure": 30em,
-  "measure-narrow": 20em,
-  "measure-wide": 34em,
-) !default;
+  "measure-1": 20em,
+  "measure-2": 30em,
+  "measure-3": 34em,
+  ) !default;
 
 // Height, Width & Spacing
 $spacings: (
-  "spacing-none": 0,
-  "spacing-extra-small": 0.25rem,
-  "spacing-small": 0.5rem,
-  "spacing-medium": 1rem,
-  "spacing-large": 2rem,
-  "spacing-extra-large": 4rem,
-  "spacing-extra-extra-large": 8rem,
-  "spacing-extra-extra-extra-large": 16rem,
-  "spacing-copy-separator": 1.5em,
-) !default;
+  "spacing-0": 0,
+  "spacing-1": 0.25rem,
+  "spacing-2": 0.5rem,
+  "spacing-3": 1rem,
+  "spacing-4": 2rem,
+  "spacing-5": 4rem,
+  "spacing-6": 8rem,
+  "spacing-7": 16rem,
+  "spacing-copy": 1.5em,
+  ) !default;
 
 $heights-scale: (
   "h1": 1rem,
@@ -106,32 +108,32 @@ $heights-scale: (
   "h3": 4rem,
   "h4": 8rem,
   "h5": 16rem,
-) !default;
+  ) !default;
 
 $heights-percent: (
   "h-25": 25%,
   "h-50": 50%,
   "h-75": 75%,
   "h-100": 100%,
-) !default;
+  ) !default;
 
 $heights-viewport: (
   "h-25": 25vh,
   "h-50": 50vh,
   "h-75": 75vh,
   "h-100": 100vh,
-) !default;
+  ) !default;
 
 $heights-min: (
   "min-h-25": 25%,
   "min-h-100 ": 100%,
   "min-vh-100": 100vh,
-) !default;
+  ) !default;
 
 $heights-strings: (
   "h-auto": auto,
   "h-inherit": inherit,
-) !default;
+  ) !default;
 
 $widths: (
   "w1": 1rem,
@@ -156,7 +158,7 @@ $widths: (
   "w-third": "calc(100% / 3)",
   "w-two-thirds": "calc(100% / 1 0.5)",
   "w-auto": auto,
-) !default;
+  ) !default;
 
 $max-widths: (
   "mw-1": 1rem,
@@ -168,17 +170,17 @@ $max-widths: (
   "mw-7": 48rem,
   "mw-8": 64rem,
   "mw-9": 96rem,
-) !default;
+  ) !default;
 
 $margins: (
-  1: --spacing-extra-small,
-  2: --spacing-small,
-  3: --spacing-medium,
-  4: --spacing-large,
-  5: --spacing-extra-large,
-  6: --spacing-extra-extra-large,
-  7: --spacing-extra-extra-extra-large,
-) !default;
+  1: --spacing-1,
+  2: --spacing-2,
+  3: --spacing-3,
+  4: --spacing-4,
+  5: --spacing-5,
+  6: --spacing-6,
+  7: --spacing-7,
+  ) !default;
 
 // Borders
 $border-radii: (
@@ -190,7 +192,7 @@ $border-radii: (
   "br-100": 100%,
   "br-circle": 100%,
   "br-pill": 9999px,
-) !default;
+  ) !default;
 
 $border-widths: (
   "bw0": 0,
@@ -199,80 +201,191 @@ $border-widths: (
   "bw3": 0.5rem,
   "bw4": 1rem,
   "bw5": 2rem,
-) !default;
+  ) !default;
 
 // Shadows
 $shadows: (
-  "shadow-1": 0 0 4px 2px hsl(0deg 0% 0% / 20%),
-  "shadow-2": 0 0 8px 2px hsl(0deg 0% 0% / 20%),
-  "shadow-3": 2px 2px 4px 2px hsl(0deg 0% 0% / 20%),
-  "shadow-4": 2px 2px 8px 0 hsl(0deg 0% 0% / 20%),
-  "shadow-5": 4px 4px 8px 0 hsl(0deg 0% 0% / 20%),
-) !default;
+  "shadow-1": 0 0 4px 2px hsl(225deg 4% 20% / 20%),
+  "shadow-2": 0 0 8px 2px hsl(225deg 4% 20% / 20%),
+  "shadow-3": 2px 2px 4px 2px hsl(225deg 4% 20% / 20%),
+  "shadow-4": 2px 2px 8px 0 hsl(225deg 4% 20% / 20%),
+  "shadow-5": 4px 4px 8px 0 hsl(225deg 4% 20% / 20%),
+  ) !default;
 
 // Color Scales
+// https://colors.fyi/compare-colors/?colors=hsl%28217+6%25+27%25%29%2C+hsl%2860+20%25+97%25%29%2C+hsl%28337+100%25+49%25%29%2C+hsl%2815+92%25+61%25%29%2C+hsl%2853+98%25+64%25%29%2C+hsl%28124+49%25+45%25%29%2C+hsl%28187+55%25+43%25%29%2C+hsl%28194+100%25+59%25%29%2C+hsl%28287+46%25+54%25%29&filter-fail=on#clear-colors
 $color-scales: (
-  "black": hsl(0deg 0% 0%),
-  "near-black": hsl(0deg 0% 7%),
-  "dark-gray": hsl(0deg 0% 20%),
-  "mid-gray": hsl(0deg 0% 33%),
-  "gray": hsl(0deg 0% 47%),
-  "silver": hsl(0deg 0% 60%),
-  "light-silver": hsl(0deg 0% 67%),
-  "moon-gray": hsl(0deg 0% 80%),
-  "light-gray": hsl(0deg 0% 93%),
-  "near-white": hsl(0deg 0% 96%),
-  "white": hsl(0deg 0% 100%),
+  brand: (
+    "dk": hsl(217, 6%, 27%),       // jet-800
+    "lt": hsl(60, 20%, 97%),       // desert-50
+    "red-lt": hsl(342, 100%, 89%), // cerise-200
+    "red": hsl(337, 100%, 49%),    // cerise-600
+    "red-dk": hsl(334, 100%, 35%), // cerise-800
+    "orange-lt":hsl(20, 93%, 83%), // sienna-200
+    "orange":hsl(15, 92%, 61%),    // sienna-400
+    "orange-dk":hsl(3, 76%, 34%),  // sienna-800
+    "yellow-lt":hsl(57, 97%, 88%), // candlelight-100
+    "yellow":hsl(53, 98%, 64%),    // candlelight-300
+    "yellow-dk":hsl(34, 82%, 29%), // candlelight-800
+    "green-lt":hsl(123, 55%, 85%), // forest-200
+    "green":hsl(124, 49%, 45%),    // forest-500
+    "green-dk":hsl(124, 45%, 24%), // forest-800
+    "teal-lt":hsl(184, 55%, 82%),  // munsell-200
+    "teal":hsl(187, 55%, 43%),     // munsell-500
+    "teal-dk":hsl(192, 41%, 27%),  // munsell-500
+    "cyan-lt":hsl(194, 100%, 59%), // picton-200
+    "cyan":hsl(194, 100%, 59%),    // picton-400
+    "cyan-dk":hsl(197, 100%, 28%), // picton-800
+    "purple-lt":hsl(284, 61%, 83%),// purpureus-300
+    "purple":hsl(287, 46%, 54%),   // purpureus-600
+    "purple-dk":hsl(288, 46%, 33%),// purpureus-800
+  ),
+  "jet": (
+    "50": hsl(180, 5%, 96%),
+    "100": hsl(216, 10%, 90%),
+    "200": hsl(213, 10%, 82%),
+    "300": hsl(214, 9%, 69%),
+    "400": hsl(210, 8%, 53%),
+    "500": hsl(213, 9%, 43%),
+    "600": hsl(214, 9%, 36%),
+    "700": hsl(220, 8%, 31%),
+    "800": hsl(217, 6%, 27%),
+    "900": hsl(220, 6%, 20%),
+    "950": hsl(220, 8%, 15%),
+  ),
+  "desert": (
+    "50": hsl(60, 20%, 97%),
+    "100": hsl(67, 19%, 92%),
+    "200": hsl(60, 19%, 83%),
+    "300": hsl(58, 19%, 72%),
+    "400": hsl(54, 20%, 61%),
+    "500": hsl(51, 19%, 53%),
+    "600": hsl(48, 18%, 48%),
+    "700": hsl(43, 17%, 40%),
+    "800": hsl(41, 16%, 34%),
+    "900": hsl(44, 15%, 28%),
+    "950": hsl(40, 16%, 15%),
+  ),
+  "cerise": (
+    "50": hsl(345, 100%, 97%),
+    "100": hsl(345, 100%, 94%),
+    "200": hsl(342, 100%, 89%),
+    "300": hsl(342, 100%, 80%),
+    "400": hsl(341, 100%, 68%),
+    "500": hsl(339, 100%, 57%),
+    "600": hsl(337, 100%, 49%),
+    "700": hsl(337, 100%, 42%),
+    "800": hsl(334, 100%, 35%),
+    "900": hsl(332, 97%, 30%),
+    "950": hsl(337, 100%, 17%),
+  ),
+  "sienna": (
+    "50": hsl(20, 100%, 96%),
+    "100": hsl(23, 95%, 92%),
+    "200": hsl(20, 93%, 83%),
+    "300": hsl(19, 93%, 72%),
+    "400": hsl(15, 92%, 61%),
+    "500": hsl(13, 91%, 53%),
+    "600": hsl(8, 86%, 48%),
+    "700": hsl(6, 84%, 40%),
+    "800": hsl(3, 76%, 34%),
+    "900": hsl(4, 72%, 28%),
+    "950": hsl(1, 78%, 15%),
+  ),
+  "candlelight": (
+    "50": hsl(57, 92%, 95%),
+    "100": hsl(57, 97%, 88%),
+    "200": hsl(55, 98%, 77%),
+    "300": hsl(53, 98%, 64%),
+    "400": hsl(50, 96%, 55%),
+    "500": hsl(48, 93%, 47%),
+    "600": hsl(43, 96%, 40%),
+    "700": hsl(38, 92%, 33%),
+    "800": hsl(34, 82%, 29%),
+    "900": hsl(31, 73%, 26%),
+    "950": hsl(28, 83%, 14%),
+  ),
+  "forest": (
+    "50": hsl(120, 53%, 97%),
+    "100": hsl(123, 58%, 93%),
+    "200": hsl(123, 55%, 85%),
+    "300": hsl(123, 53%, 73%),
+    "400": hsl(124, 48%, 58%),
+    "500": hsl(124, 49%, 45%),
+    "600": hsl(124, 53%, 38%),
+    "700": hsl(124, 49%, 29%),
+    "800": hsl(124, 45%, 24%),
+    "900": hsl(126, 42%, 20%),
+    "950": hsl(126, 57%, 10%),
+  ),
+  "munsell": (
+    "50": hsl(185, 58%, 96%),
+    "100": hsl(182, 55%, 90%),
+    "200": hsl(184, 55%, 82%),
+    "300": hsl(185, 54%, 69%),
+    "400": hsl(186, 50%, 53%),
+    "500": hsl(187, 55%, 43%),
+    "600": hsl(190, 54%, 38%),
+    "700": hsl(191, 48%, 31%),
+    "800": hsl(192, 41%, 27%),
+    "900": hsl(195, 37%, 24%),
+    "950": hsl(195, 47%, 15%),
+  ),
+  "picton": (
+    "50": hsl(199, 100%, 97%),
+    "100": hsl(200, 100%, 94%),
+    "200": hsl(196, 100%, 86%),
+    "300": hsl(194, 100%, 73%),
+    "400": hsl(194, 100%, 59%),
+    "500": hsl(195, 100%, 47%),
+    "600": hsl(198, 100%, 42%),
+    "700": hsl(199, 100%, 34%),
+    "800": hsl(197, 100%, 28%),
+    "900": hsl(198, 90%, 24%),
+    "950": hsl(201, 90%, 16%),
+  ),
+  "purpureus": (
+    "50": hsl(283, 64%, 98%),
+    "100": hsl(280, 65%, 95%),
+    "200": hsl(282, 63%, 91%),
+    "300": hsl(284, 61%, 83%),
+    "400": hsl(285, 61%, 73%),
+    "500": hsl(285, 56%, 61%),
+    "600": hsl(287, 46%, 54%),
+    "700": hsl(288, 48%, 40%),
+    "800": hsl(288, 46%, 33%),
+    "900": hsl(289, 43%, 28%),
+    "950": hsl(289, 61%, 16%),
+  ),
+  "black-o": (
+    "90": hsla(225, 4%, 20%, 90%),
+    "80": hsla(225, 4%, 20%, 80%),
+    "70": hsla(225, 4%, 20%, 70%),
+    "60": hsla(225, 4%, 20%, 60%),
+    "50": hsla(225, 4%, 20%, 50%),
+    "40": hsla(225, 4%, 20%, 40%),
+    "30": hsla(225, 4%, 20%, 30%),
+    "20": hsla(225, 4%, 20%, 20%),
+    "10": hsla(225, 4%, 20%, 10%),
+    "05": hsla(225, 4%, 20%, 5%),
+    "025": hsla(225, 4%, 20%, 2.5%),
+    "0125": hsla(225, 4%, 20%, 1.25%),
+  ),
+  "white-o": (
+    "90": hsla(240, 2.22%, 91.18%, 90%),
+    "80": hsla(240, 2.22%, 91.18%, 80%),
+    "70": hsla(240, 2.22%, 91.18%, 70%),
+    "60": hsla(240, 2.22%, 91.18%, 60%),
+    "50": hsla(240, 2.22%, 91.18%, 50%),
+    "40": hsla(240, 2.22%, 91.18%, 40%),
+    "30": hsla(240, 2.22%, 91.18%, 30%),
+    "20": hsla(240, 2.22%, 91.18%, 20%),
+    "10": hsla(240, 2.22%, 91.18%, 10%),
+    "05": hsla(240, 2.22%, 91.18%, 5%),
+    "025": hsla(240, 2.22%, 91.18%, 2.5%),
+    "0125": hsla(240, 2.22%, 91.18%, 1.25%),
+  ),
   "transparent": transparent,
-  "black-90": hsl(0deg 0% 0% / 90%),
-  "black-80": hsl(0deg 0% 0% / 80%),
-  "black-70": hsl(0deg 0% 0% / 70%),
-  "black-60": hsl(0deg 0% 0% / 60%),
-  "black-50": hsl(0deg 0% 0% / 50%),
-  "black-40": hsl(0deg 0% 0% / 40%),
-  "black-30": hsl(0deg 0% 0% / 30%),
-  "black-20": hsl(0deg 0% 0% / 20%),
-  "black-10": hsl(0deg 0% 0% / 10%),
-  "black-05": hsl(0deg 0% 0% / 5%),
-  "black-025": hsl(0deg 0% 0% / 2.5%),
-  "black-0125": hsl(0deg 0% 0% / 1.3%),
-  "white-90": hsl(0deg 0% 100% / 90%),
-  "white-80": hsl(0deg 0% 100% / 80%),
-  "white-70": hsl(0deg 0% 100% / 70%),
-  "white-60": hsl(0deg 0% 100% / 60%),
-  "white-50": hsl(0deg 0% 100% / 50%),
-  "white-40": hsl(0deg 0% 100% / 40%),
-  "white-30": hsl(0deg 0% 100% / 30%),
-  "white-20": hsl(0deg 0% 100% / 20%),
-  "white-10": hsl(0deg 0% 100% / 10%),
-  "white-05": hsl(0deg 0% 100% / 5%),
-  "white-025": hsl(0deg 0% 100% / 2.5%),
-  "white-0125": hsl(0deg 0% 100% / 1.3%),
-  "dark-red": hsl(357deg 97% 46%),
-  "red": hsl(3deg 100% 61%),
-  "light-red": hsl(8deg 100% 68%),
-  "orange": hsl(23deg 100% 50%),
-  "gold": hsl(43deg 100% 50%),
-  "yellow": hsl(51deg 100% 50%),
-  "light-yellow": hsl(53deg 91% 82%),
-  "purple": hsl(265deg 58% 41%),
-  "light-purple": hsl(267deg 85% 67%),
-  "dark-pink": hsl(320deg 100% 42%),
-  "hot-pink": hsl(330deg 100% 50%),
-  "pink": hsl(335deg 100% 50%),
-  "light-pink": hsl(335deg 100% 67%),
-  "dark-green": hsl(120deg 100% 20%),
-  "green": hsl(120deg 100% 40%),
-  "light-green": hsl(120deg 100% 60%),
-  "navy": hsl(210deg 100% 25%),
-  "dark-blue": hsl(220deg 100% 20%),
-  "blue": hsl(220deg 100% 40%),
-  "light-blue": hsl(220deg 100% 60%),
-  "lightest-blue": hsl(220deg 100% 90%),
-  "washed-blue": hsl(220deg 100% 95%),
-  "washed-green": hsl(120deg 100% 95%),
-  "washed-yellow": hsl(51deg 100% 95%),
-  "washed-red": hsl(0deg 100% 95%),
   "inherit": inherit,
 ) !default;
 
@@ -290,7 +403,7 @@ $opacities: (
   "o-05": 0.5,
   "o-025": 0.25,
   "o-0": 0,
-) !default;
+  ) !default;
 
 // Utilites
 
@@ -306,7 +419,7 @@ $ratios: (
   "aspect-ratio--7x5": 71.42%,
   "aspect-ratio--5x7": 140%,
   "aspect-ratio--1x1": 100%,
-) !default;
+  ) !default;
 
 $rotations: (
   "rorate-45": 45deg,
@@ -316,7 +429,7 @@ $rotations: (
   "rorate-225": 225deg,
   "rorate-270": 270deg,
   "rorate-315": 315deg,
-) !default;
+  ) !default;
 
 $z-indexes: (
   "z-0": 0,
@@ -326,4 +439,4 @@ $z-indexes: (
   "z-5": 5,
   "z-999": 999,
   "z-9999": 9999,
-) !default;
+  ) !default;

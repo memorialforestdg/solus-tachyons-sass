@@ -22,25 +22,25 @@
 
 .nested-list-reset ul,
 .nested-list-reset ol {
-  margin-left: 0;
-  padding-left: 0;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 
 .nested-copy-indent p + p {
-  margin-top: var(--spacing-none);
-  margin-bottom: var(--spacing-none);
+  margin-block-start: var(--spacing-0);
+  margin-block-end: var(--spacing-0);
   text-indent: var(--letter-spacing-1);
 }
 
 .nested-copy-separator p + p {
-  margin-top: var(--spacing-copy-separator);
+  margin-block-start: var(--spacing-copy);
 }
 
 .nested-img img {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  inline-size: 100%;
+  max-inline-size: 100%;
 }
 
 .nested-links a {

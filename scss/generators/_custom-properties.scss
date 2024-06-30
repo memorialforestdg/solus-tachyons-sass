@@ -1,4 +1,6 @@
-/// Generates CSS custom properties for each key-value pair in the provided map.
+@use "functions" as *;
+
+/// Generates CSS custom properties for each key-value pair in the provided map, handeling nested maps as required.
 ///
 /// @param {Map} $map - A map of key-value pairs to generate custom properties for.
 ///
@@ -9,8 +11,24 @@
 ///     font-size-base: 1rem
 ///   ));
 ///
-@mixin custom-properties($map) {
+// @mixin custom-properties($map) {
+//   @each $key, $value in $map {
+//     --#{$key}: #{$value};
+//   }
+// }
+@mixin custom-properties($map, $prefix: '') {
   @each $key, $value in $map {
-    --#{$key}: #{$value};
+    @if type-of($value) == 'map' {
+      @include custom-properties($value, $key);
+    } @else {
+
+    @if $key != "" {
+      // if the string $prefix does not end with '-'
+      @if not ends-with($prefix, "-") and $prefix != "" {
+        $prefix: $prefix + "-";
+        }
+      }
+      --#{$prefix}#{$key}: #{$value};
+    }
   }
 }

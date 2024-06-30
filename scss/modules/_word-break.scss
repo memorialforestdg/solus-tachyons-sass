@@ -18,14 +18,18 @@
   }
 
   .word-wrap-all#{$bkpt-suffix} {
-    word-break: wrap-all;
+    word-break: break-all;
+  }
+
+    .word-wrap-keep#{$bkpt-suffix} {
+    word-break: keep-all;
   }
 
   .word-wrap#{$bkpt-suffix} {
     word-break: wrap;
   }
 
-  .word-nowrap#{$bkpt-suffix} {
-    word-break: nowrap;
+  .word-break#{$bkpt-suffix} {
+    word-break: break-word;
   }
 }

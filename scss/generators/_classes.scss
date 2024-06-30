@@ -45,8 +45,8 @@
 /// @example
 /// @include generate-compound-classes(
 ///     (
-///       "spacing-none": 0,
-///       "spacing-small": 0.5rem
+///       "spacing-0": 0,
+///       "spacing-1": 0.5rem
 ///     ),
 ///     "pa", "", $bkpt-suffix
 ///   )
@@ -57,8 +57,8 @@
 /// }
 ///
 /// Produces:
-/// .pa0 { padding: var(--spacing-none, 0); }
-/// .pa1 { padding: var(--spacing-extra-small, 0.25rem); }
+/// .pa0 { padding: var(--spacing-1, 0); }
+/// .pa1 { padding: var(--spacing-2, 0.25rem); }
 ///
 @mixin generate-compound-classes(
   $map,
@@ -83,3 +83,96 @@
     $i: $i + 1;
   }
 }
+
+/// A mixin to generate nested compound classes with internal incrementor from a nested sass map
+///
+/// TODO: This isn't working as expected as nested maps are not resolving @content
+/// USE @generate-nested-map-classes instead
+/// SEE https://github.com/sass/sass/issues/3890
+///
+/// @param {Map} $map - Map of compound classes
+/// @param {String} $prefix - Prefix for the compound class
+/// @param {String} $suffix - Suffix for the compound class
+/// @param {String} $bkpt-suffix - Breakpoint suffix for the compound class
+/// @param {Integer} $i - Incrementor, defaults to 0, use to set starting value.
+/// @example
+/// @include generate-nested-compound-classes(
+///     (
+///       "spacing": (
+///         "0": 0,
+///         "1": 0.5rem
+///       )
+///     ),
+///     "pa", "", $bkpt-suffix
+///   )
+///   using ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+///   .#{$prefix}#{$key}#{$bkpt-suffix} {
+///     padding: var(--#{$key}, #{$value});
+///   }
+/// }
+///
+/// Produces:
+/// .pa-spacing-0 { padding: var(--spacing-0, 0); }
+/// .pa-spacing-1 { padding: var(--spacing-1, 0.25rem); }
+///
+@mixin generate-nested-compound-classes(
+  $map,
+  $prefix: "",
+  $suffix: "",
+  $bkpt-suffix: "",
+  $i: 0
+){
+    @each $key, $value in $map {
+      @if type-of($value) == 'map' {
+        @if not ends-with($prefix, "-") and $prefix != "" {
+          $prefix: $prefix + "-";
+        }
+        $key: $prefix + $key;
+          @include generate-nested-compound-classes($value, $key);
+      } @else {
+        @if $key != "" {
+          // if the string $prefix does not end with '-'
+          @if not ends-with($prefix, "-") and $prefix != "" {
+            $prefix: $prefix + "-";
+          }
+
+          // if the string $suffix does start with '-'
+          @if not starts-with($suffix, "-") and $suffix != "" {
+            $suffix: "-" + $suffix;
+          }
+          @debug "ELSE #{$prefix}#{$key} value: #{$value} ";
+          @content ($key, $value, $prefix, $suffix, $bkpt-suffix, $i);
+        }
+        $i: $i + 1;
+      }
+    }
+  }
+
+
+
+ /**
+  * Generates classes for nested maps.
+  *
+  * @mixin generate-nested-map-classes($map, $prefix: "", $bkpt-suffix: "")
+  * @param {Map} $map - The map of nested classes.
+  * @param {String} $prefix - The prefix for class names.
+  * @param {String} $bkpt-suffix - The breakpoint suffix for class names.
+  */
+  @mixin generate-nested-map-classes(
+  $map,
+  $prefix: "",
+  $bkpt-suffix: "",
+){
+    @each $key, $value in $map {
+      @if type-of($value) == 'map' {
+        $_outer: $key;
+        @each $key, $value in $value {
+          $key:  $_outer + "-" + $key;
+           @content ($key, $value, $prefix, $bkpt-suffix);
+        }
+      } @else {
+          @content ($key, $value, $prefix, $bkpt-suffix);
+        }
+    }
+  }
+

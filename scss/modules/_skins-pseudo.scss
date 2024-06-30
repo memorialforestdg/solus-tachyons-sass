@@ -10,12 +10,22 @@
 
  */
 @include generate-breakpoints {
-  @include generate-compound-classes($color-scales, hover) using
-    ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+  @include generate-nested-map-classes($color-scales, 'hover-') using
+    ($key, $value, $prefix,  $bkpt-suffix) {
     .#{$prefix}#{$key}#{$bkpt-suffix} {
       &:hover,
       &:focus {
         color: var(--#{$key}, #{$value});
+      }
+    }
+  }
+
+  @include generate-nested-map-classes($color-scales, 'hover-bg-') using
+    ($key, $value, $prefix,  $bkpt-suffix) {
+    .#{$prefix}#{$key}#{$bkpt-suffix} {
+      &:hover,
+      &:focus {
+        background-color: var(--#{$key}, #{$value});
       }
     }
   }
