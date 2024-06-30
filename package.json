@@ -12,7 +12,7 @@
     ],
     "scripts": {
         "migrate": "sass-migrator --migrate-deps module --forward=all tachyons.scss",
-        "build": "run-s build:css build:minify prettier:css",
+        "build": "run-s build:css prettier:css",
         "build:css": "sass tachyons.scss ../../src/styles/tachyons.css",
         "build:minify": "sass --style=compressed tachyons.scss ../../src/styles/tachyons.min.css --style=compressed",
         "dev": "sass --watch tachyons.scss ../../src/styles/tachyons.css",
