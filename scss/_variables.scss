@@ -401,8 +401,11 @@ $color-scales: (
   ),
   'transparent': transparent,
   'inherit': inherit,
+  'initial': initial,
   'currencolor': currentcolor,
-  'none': none
+  'revert': revert,
+  'revert-layer': revert-layer,
+  'unset': unset
 ) !default;
 
 $opacities: (
