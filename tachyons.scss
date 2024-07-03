@@ -30,14 +30,14 @@
 // @use "scss/vendor/nu-reset";
 
 // 2. Sass Variables
-@use "scss/variables";
+@use 'scss/variables';
 
 // 3. Mixins
-@forward "scss/generators";
+@forward 'scss/generators';
 
 // 4. CSS Custom Properties
 // Importing here will allow you to override any custom properties in modules.
-@use "scss/properties";
+@use 'scss/properties';
 
 // @use "scss/properties/border-radius-props";
 // @use "scss/properties/border-widths-props";
@@ -60,12 +60,13 @@
 
 @use 'scss/modules/box-sizing';
 @use 'scss/modules/aspect-ratios';
-@use "scss/modules/images";
+@use 'scss/modules/images';
 @use 'scss/modules/background-size';
 @use 'scss/modules/background-position';
 @use 'scss/modules/outlines';
 @use 'scss/modules/borders';
 @use 'scss/modules/border-colors';
+
 // @use 'scss/modules/border-radius';
 // @use 'scss/modules/border-style';
 // @use 'scss/modules/border-widths';
@@ -73,25 +74,28 @@
 // @use 'scss/modules/code';
 // @use "scss/modules/coordinates";
 // @use "scss/modules/clears";
-    @use 'scss/modules/display';
-    @use 'scss/modules/flexbox';
+@use 'scss/modules/display';
+@use 'scss/modules/flexbox';
+
 // @use "scss/modules/floats";
 // @use 'scss/modules/font-family';
-  @use 'scss/modules/font-style';
-  @use 'scss/modules/font-weight';
-  @use 'scss/modules/forms';
-  @use 'scss/modules/heights';
-  @use 'scss/modules/letter-spacing';
-  @use 'scss/modules/line-height';
-  @use 'scss/modules/links';
-  @use 'scss/modules/lists';
-  @use 'scss/modules/max-widths';
-  @use 'scss/modules/widths';
-  @use 'scss/modules/overflow';
-  @use 'scss/modules/position';
-  @use 'scss/modules/opacity';
+@use 'scss/modules/font-style';
+@use 'scss/modules/font-weight';
+@use 'scss/modules/forms';
+@use 'scss/modules/heights';
+@use 'scss/modules/letter-spacing';
+@use 'scss/modules/line-height';
+@use 'scss/modules/links';
+@use 'scss/modules/lists';
+@use 'scss/modules/max-widths';
+@use 'scss/modules/widths';
+@use 'scss/modules/overflow';
+@use 'scss/modules/position';
+@use 'scss/modules/opacity';
+
 // @use 'scss/modules/rotations';
 @use 'scss/modules/skins';
+@use 'scss/modules/skins-dropcap';
 @use 'scss/modules/skins-pseudo';
 @use 'scss/modules/spacing';
 @use 'scss/modules/negative-margins';

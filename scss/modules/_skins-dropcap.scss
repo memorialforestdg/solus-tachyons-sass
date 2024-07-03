@@ -1,0 +1,16 @@
+@use '../variables' as *;
+@use '../generators/classes' as *;
+@use '../generators/breakpoints' as *;
+/*
+
+   SKINS for custom dropcaps style.
+
+*/
+
+/* Text colors */
+@include generate-nested-map-classes($color-scales) using
+  ($key, $value, $prefix, $brkpoint) {
+  .dropcap.--dc-#{$prefix}#{$key} > p:first-of-type::first-letter {
+    color: var(--#{$key}, #{$value});
+  }
+}
