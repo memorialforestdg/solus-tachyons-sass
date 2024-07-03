@@ -207,52 +207,52 @@ $shadows: (
 // https://colors.fyi/compare-colors/?colors=hsl%28217+6%25+27%25%29%2C+hsl%2860+20%25+97%25%29%2C+hsl%28337+100%25+49%25%29%2C+hsl%2815+92%25+61%25%29%2C+hsl%2853+98%25+64%25%29%2C+hsl%28124+49%25+45%25%29%2C+hsl%28187+55%25+43%25%29%2C+hsl%28194+100%25+59%25%29%2C+hsl%28287+46%25+54%25%29&filter-fail=on#clear-colors
 $color-scales: (
   brand: (
-    'dk': hsl(217, 6%, 27%),
     // jet-800
-    'lt': hsl(60, 20%, 97%),
+    'dk': hsl(217, 6%, 27%),
     // desert-50
-    'red-lt': hsl(342, 100%, 89%),
+    'lt': hsl(60, 20%, 97%),
     // cerise-200
-    'red': hsl(337, 100%, 49%),
+    'red-lt': hsl(342, 100%, 89%),
     // cerise-600
-    'red-dk': hsl(334, 100%, 35%),
+    'red': hsl(337, 100%, 49%),
     // cerise-800
-    'orange-lt': hsl(20, 93%, 83%),
+    'red-dk': hsl(334, 100%, 35%),
     // sienna-200
-    'orange': hsl(15, 92%, 61%),
+    'orange-lt': hsl(20, 93%, 83%),
     // sienna-400
-    'orange-dk': hsl(3, 76%, 34%),
+    'orange': hsl(15, 92%, 61%),
     // sienna-800
-    'yellow-lt': hsl(57, 97%, 88%),
+    'orange-dk': hsl(3, 76%, 34%),
     // candlelight-100
-    'yellow': hsl(53, 98%, 64%),
+    'yellow-lt': hsl(57, 97%, 88%),
     // candlelight-300
-    'yellow-dk': hsl(34, 82%, 29%),
+    'yellow': hsl(53, 98%, 64%),
     // candlelight-800
-    'green-lt': hsl(123, 55%, 85%),
+    'yellow-dk': hsl(34, 82%, 29%),
     // forest-200
-    'green': hsl(124, 49%, 45%),
+    'green-lt': hsl(123, 55%, 85%),
     // forest-500
-    'green-dk': hsl(124, 45%, 24%),
+    'green': hsl(124, 49%, 45%),
     // forest-800
-    'teal-lt': hsl(184, 55%, 82%),
+    'green-dk': hsl(124, 45%, 24%),
     // munsell-200
+    'teal-lt': hsl(184, 55%, 82%),
+    // munsell-500
     'teal': hsl(187, 55%, 43%),
     // munsell-500
     'teal-dk': hsl(192, 41%, 27%),
-    // munsell-500
-    'cyan-lt': hsl(194, 100%, 59%),
     // picton-200
-    'cyan': hsl(194, 100%, 59%),
+    'cyan-lt': hsl(196, 100%, 86%),
     // picton-400
-    'cyan-dk': hsl(197, 100%, 28%),
+    'cyan': hsl(194, 100%, 59%),
     // picton-800
-    'purple-lt': hsl(284, 61%, 83%),
+    'cyan-dk': hsl(197, 100%, 28%),
     // purpureus-300
-    'purple': hsl(287, 46%, 54%),
+    'purple-lt': hsl(284, 61%, 83%),
     // purpureus-600
-    'purple-dk': hsl(288, 46%, 33%),
+    'purple': hsl(287, 46%, 54%),
     // purpureus-800
+    'purple-dk': hsl(288, 46%, 33%)
   ),
   'jet': (
     '50': hsl(180, 5%, 96%),
