@@ -70,5 +70,8 @@
             "name": "bnjmnrsh",
             "email": "bnjmnrsh@gmail.com"
         }
-    ]
+    ],
+    "dependencies": {
+        "editorconfig": "^2.0.0"
+    }
 }
