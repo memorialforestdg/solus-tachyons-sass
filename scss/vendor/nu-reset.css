@@ -17,19 +17,20 @@
 /*
   Remove default margins & padding.
 */
-* {
+*:not(ul, li, dd, dt) {
   margin: 0;
   padding: 0;
 }
 
-html,
+:root,
 body {
-  block-size: 100%;
+  min-block-size: 100%;
 }
 /*
   Prevent font size inflation on small devices.
 */
-html {
+:root {
+  scroll-behavior: smooth;
   text-size-adjust: none;
 }
 /*
@@ -84,8 +85,16 @@ iframe,
 embed,
 object {
   display: block;
-  max-width: 100%;
+  max-inline-size: 100%;
 }
+
+iframe {
+  height: auto;
+  border: 0;
+  max-inline-size: 100%;
+  aspect-ratio: 16 / 9;
+}
+
 /*
   Remove built-in form typography styles.
 */
@@ -102,6 +111,11 @@ input,
 button,
 label {
   line-height: var(--lh-solid, 1);
+}
+
+input[type='file'] {
+  width: 100%;
+  max-width: 100vw !important;
 }
 /*
   Avoid text overflows.
@@ -172,4 +186,15 @@ noscript {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  max-inline-size: 100vw;
+}
+
+code,
+pre {
+  font-family: var(--monospace, monospace);
 }
