@@ -1,0 +1,48 @@
+@use '../variables' as *;
+@use '../generators/classes' as *;
+@use '../generators/breakpoints' as *;
+/*
+
+   GAP
+   Solus-Tachyons
+
+   A spacing utility for controlling the gap between elements in flex, grid and multi-column containers.
+
+   Base:
+     gap = $spacing
+
+     1 = 1st step in spacings scale
+     2 = 2nd step in spacings scale
+     3 = 3rd step in spacings scale
+     4 = 4th step in spacings scale
+     5 = 5th step in spacings scale
+
+     -25   = literal value 25%
+     -50   = literal value 50%
+     -75   = literal value 75%
+     -100  = literal value 100%
+
+     -auto = string value of auto
+     -inherit = string value of inherit
+
+*/
+@include generate-breakpoints {
+  @include generate-compound-classes($spacings, gap, '', $bkpt-suffix) using
+    ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+    .#{$prefix}#{$i}#{$bkpt-suffix} {
+      gap: var(--#{$key}, #{$value});
+    }
+  }
+  @include generate-compound-classes($spacings-percent, gap, '', $bkpt-suffix)
+    using ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+    .#{$prefix}-#{$key}#{$bkpt-suffix} {
+      gap: #{$value};
+    }
+  }
+  @include generate-compound-classes($global-strings, gap, '', $bkpt-suffix)
+    using ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+    .#{$prefix}#{$key}#{$bkpt-suffix} {
+      gap: #{$value};
+    }
+  }
+}
