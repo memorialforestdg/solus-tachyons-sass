@@ -11,6 +11,15 @@ $breakpoints: (
   'l': $breakpoint-large
 ) !default;
 
+// Global values
+$global-strings: (
+  'inherit': inherit,
+  'initial': initial,
+  'revert': revert,
+  'revert-layer': revert-layer,
+  'unset': unset
+);
+
 // Typography
 $sans-serif:
   'Nunito',
@@ -91,6 +100,13 @@ $spacings: (
   'spacing-6': 8rem,
   'spacing-7': 16rem,
   'spacing-copy': 1.5em
+) !default;
+
+$spacings-percent: (
+  '25': 25%,
+  '50': 50%,
+  '75': 75%,
+  '100': 100%
 ) !default;
 
 $heights-scale: (
@@ -400,12 +416,12 @@ $color-scales: (
     '0125': hsla(240, 2.22%, 91.18%, 1.25%)
   ),
   'transparent': transparent,
-  'inherit': inherit,
-  'initial': initial,
   'currencolor': currentcolor,
-  'revert': revert,
-  'revert-layer': revert-layer,
-  'unset': unset
+  'color-inherit': inherit,
+  'color-initial': initial,
+  'color-revert': revert,
+  'color-revert-layer': revert-layer,
+  'color-unset': unset
 ) !default;
 
 $opacities: (
