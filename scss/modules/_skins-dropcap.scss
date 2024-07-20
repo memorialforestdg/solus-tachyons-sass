@@ -13,4 +13,7 @@
   .dropcap.--dc-#{$prefix}#{$key} > p:first-of-type::first-letter {
     color: var(--#{$key}, #{$value});
   }
+  .dropcap.--dc-#{$prefix}#{$key} {
+    --dropcap-color: var(--#{$key}, #{$value});
+  }
 }
