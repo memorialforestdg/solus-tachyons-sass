@@ -1,0 +1,144 @@
+@use "../generators/breakpoints" as *;
+/*
+
+  Grid & Subgrid
+
+*/
+@include generate-breakpoints {
+  .grid#{$bkpt-suffix} {
+    display: grid;
+  }
+
+  .inline-grid#{$bkpt-suffix} {
+    display: inline-grid;
+  }
+
+  /* Grid Template Columns */
+  @for $i from 1 through 12 {
+    .grid-cols-#{$i}#{$bkpt-suffix} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+  .grid-cols-none#{$bkpt-suffix} {
+    grid-template-columns: none;
+  }
+  .grid-cols-subgrid#{$bkpt-suffix} {
+    grid-template-columns: subgrid;
+  }
+
+  /* Grid Column Span */
+  .col-auto#{$bkpt-suffix} {
+    grid-column: auto;
+  }
+  @for $i from 1 through 12 {
+    .col-span-#{$i}#{$bkpt-suffix} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+  .col-span-full#{$bkpt-suffix} {
+    grid-column: 1 / -1;
+  }
+  @for $i from 1 through 13 {
+    .col-start-#{$i}#{$bkpt-suffix} {
+      grid-column-start:  #{$i};
+    }
+  }
+  .col-start-auto#{$bkpt-suffix} {
+    grid-column-start: auto;
+  }
+  @for $i from 1 through 13 {
+    .col-end-#{$i}#{$bkpt-suffix} {
+      grid-column-end:  #{$i};
+    }
+  }
+  .col-end-auto#{$bkpt-suffix} {
+    grid-column-end: auto;
+  }
+
+  /* Grid Template Rows */
+  @for $i from 1 through 12 {
+    .grid-rows-#{$i}#{$bkpt-suffix} {
+      grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+  .grid-rows-none#{$bkpt-suffix} {
+    grid-template-rows: none;
+  }
+  .grid-rows-subgrid#{$bkpt-suffix} {
+    grid-template-rows: subgrid;
+  }
+
+  /* Grid Row Span */
+  .row-auto#{$bkpt-suffix} {
+    grid-row: auto;
+  }
+  @for $i from 1 through 12 {
+    .row-span-#{$i}#{$bkpt-suffix} {
+      grid-row: span #{$i} / span #{$i};
+    }
+  }
+  .row-span-full#{$bkpt-suffix} {
+    grid-row: 1 / -1;
+  }
+  @for $i from 1 through 13 {
+    .row-start-#{$i}#{$bkpt-suffix} {
+      grid-row-start:  #{$i};
+    }
+  }
+  .row-start-auto#{$bkpt-suffix} {
+    grid-row-start: auto;
+  }
+  @for $i from 1 through 13 {
+    .row-end-#{$i}#{$bkpt-suffix} {
+      grid-row-end:  #{$i};
+    }
+  }
+  .row-end-auto#{$bkpt-suffix} {
+    grid-row-end: auto;
+  }
+
+  /* Grid Auto Flow */
+  .grid-flow-row#{$bkpt-suffix} {
+    grid-auto-flow: row;
+  }
+  .grid-flow-col#{$bkpt-suffix} {
+    grid-auto-flow: column;
+  }
+   .grid-flow-dense#{$bkpt-suffix} {
+    grid-auto-flow: dense;
+  }
+  .grid-flow-row-dense#{$bkpt-suffix} {
+    grid-auto-flow: row dense;
+  }
+  .grid-flow-col-dense#{$bkpt-suffix} {
+    grid-auto-flow: column dense;
+  }
+
+  /* Grid Auto Columns */
+  .auto-cols-auto#{$bkpt-suffix} {
+    grid-auto-columns: auto;
+  }
+  .auto-cols-min#{$bkpt-suffix} {
+    grid-auto-columns: min-content;
+  }
+  .auto-cols-max#{$bkpt-suffix} {
+    grid-auto-columns: max-content;
+  }
+  .auto-cols-fr#{$bkpt-suffix} {
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  /* Grid Auto Rows */
+  .auto-rows-auto#{$bkpt-suffix} {
+    grid-auto-rows: auto;
+  }
+  .auto-rows-min#{$bkpt-suffix} {
+    grid-auto-rows: min-content;
+  }
+  .auto-rows-max#{$bkpt-suffix} {
+    grid-auto-rows: max-content;
+  }
+  .auto-rows-fr#{$bkpt-suffix} {
+    grid-auto-rows: minmax(0, 1fr);
+  }
+}

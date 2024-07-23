@@ -9,7 +9,9 @@
    A spacing utility for controlling the gap between elements in flex, grid and multi-column containers.
 
    Base:
-     gap = $spacing
+     gap-$spacing // row & column
+     gap-x-$spacing // row-gap
+     gap-y-$spacing // column-gap
 
      1 = 1st step in spacings scale
      2 = 2nd step in spacings scale
@@ -17,32 +19,29 @@
      4 = 4th step in spacings scale
      5 = 5th step in spacings scale
 
-     -25   = literal value 25%
-     -50   = literal value 50%
-     -75   = literal value 75%
-     -100  = literal value 100%
-
-     -auto = string value of auto
-     -inherit = string value of inherit
-
 */
 @include generate-breakpoints {
+  /* Gap*/
   @include generate-compound-classes($spacings, gap, '', $bkpt-suffix) using
     ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
     .#{$prefix}#{$i}#{$bkpt-suffix} {
       gap: var(--#{$key}, #{$value});
     }
   }
-  @include generate-compound-classes($spacings-percent, gap, '', $bkpt-suffix)
-    using ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
-    .#{$prefix}-#{$key}#{$bkpt-suffix} {
-      gap: #{$value};
+
+  /* Gap-x */
+   @include generate-compound-classes($spacings, gap-x, '', $bkpt-suffix) using
+    ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+    .#{$prefix}#{$i}#{$bkpt-suffix} {
+      row-gap: var(--#{$key}, #{$value});
     }
   }
-  @include generate-compound-classes($global-strings, gap, '', $bkpt-suffix)
-    using ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
-    .#{$prefix}#{$key}#{$bkpt-suffix} {
-      gap: #{$value};
+
+  /* Gap-y */
+   @include generate-compound-classes($spacings, gap-y, '', $bkpt-suffix) using
+    ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
+    .#{$prefix}#{$i}#{$bkpt-suffix} {
+      column-gap: var(--#{$key}, #{$value});
     }
   }
 }
