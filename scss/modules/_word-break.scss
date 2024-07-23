@@ -3,8 +3,10 @@
 
   WORD BREAK
 
+  See also overflow-wrap.
+
    Base:
-     word = word-break
+     bw = word-break
 
    Media Query Extensions:
      -ns = not-small
@@ -13,23 +15,23 @@
 
 */
 @include generate-breakpoints {
-  .word-normal#{$bkpt-suffix} {
+  .work-break-normal#{$bkpt-suffix} {
     word-break: normal;
   }
 
-  .word-wrap-all#{$bkpt-suffix} {
+  .work-break-all#{$bkpt-suffix} {
     word-break: break-all;
   }
 
-    .word-wrap-keep#{$bkpt-suffix} {
+  .work-break-keep#{$bkpt-suffix} {
     word-break: keep-all;
   }
 
-  .word-wrap#{$bkpt-suffix} {
+  .work-break-wrap#{$bkpt-suffix} {
     word-break: wrap;
   }
 
-  .word-break#{$bkpt-suffix} {
-    word-break: break-word;
+  .work-break-auto#{$bkpt-suffix} {
+    word-break: auto-phrase; /* experimental */
   }
 }
