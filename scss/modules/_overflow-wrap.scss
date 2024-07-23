@@ -1,0 +1,19 @@
+@use "../generators/breakpoints" as *;
+/*
+
+    OVERFLOW-WRAP
+
+    See also word-break.
+
+*/
+@include generate-breakpoints {
+  .overflow-wrap-normal#{$bkpt-suffix} {
+    overflow-wrap: normal;
+  }
+  .overflow-wrap-any#{$bkpt-suffix} {
+    overflow-wrap: anywhere;
+  }
+  .overflow-wrap-break#{$bkpt-suffix} {
+    overflow-wrap: break-word;
+  }
+}
