@@ -9,15 +9,15 @@
     white-space: normal;
   }
 
-  .nowrap#{$bkpt-suffix} {
+  .ws-nowrap#{$bkpt-suffix} {
     white-space: nowrap;
   }
 
-  .pre#{$bkpt-suffix} {
+  .ws-pre#{$bkpt-suffix} {
     white-space: pre;
   }
 
-  .pre-wrap#{$bkpt-suffix} {
+  .ws-prewrap#{$bkpt-suffix} {
     white-space: pre-wrap;
   }
 }
