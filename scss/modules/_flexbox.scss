@@ -3,7 +3,8 @@
 
   FLEXBOX
 
-  Also includes properties common with Gap: Order, Justify, Align, and Place.
+  Also includes properties common with Grid: Order, Justify, Align, and Place.
+  See also _gap.scss
 
 */
 @include generate-breakpoints {
@@ -50,17 +51,17 @@
     flex: none;
   }
 
-  .grow#{$bkpt-suffix} {
+  .flex-grow#{$bkpt-suffix} {
     flex-grow: 1;
   }
-  .grow-0#{$bkpt-suffix} {
+  .flex-grow-0#{$bkpt-suffix} {
     flex-grow: 0;
   }
 
-  .shrink#{$bkpt-suffix} {
+  .flex-shrink#{$bkpt-suffix} {
     flex-shrink: 1;
   }
-  .shrink-0#{$bkpt-suffix} {
+  .flex-shrink-0#{$bkpt-suffix} {
     flex-shrink: 0;
   }
 
