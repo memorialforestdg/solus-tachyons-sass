@@ -9,7 +9,7 @@
    A spacing utility for controlling the gap between elements in flex, grid and multi-column containers.
 
    Base:
-     gap-$spacing // row & column
+     gap-$spacing   // row & column
      gap-x-$spacing // row-gap
      gap-y-$spacing // column-gap
 
@@ -18,10 +18,11 @@
      3 = 3rd step in spacings scale
      4 = 4th step in spacings scale
      5 = 5th step in spacings scale
+     ...
 
 */
 @include generate-breakpoints {
-  /* Gap*/
+  /* gap */
   @include generate-compound-classes($spacings, gap, '', $bkpt-suffix) using
     ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
     .#{$prefix}#{$i}#{$bkpt-suffix} {
@@ -29,16 +30,16 @@
     }
   }
 
-  /* Gap-x */
-   @include generate-compound-classes($spacings, gap-x, '', $bkpt-suffix) using
+  /* gap-x */
+  @include generate-compound-classes($spacings, gap-x, '', $bkpt-suffix) using
     ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
     .#{$prefix}#{$i}#{$bkpt-suffix} {
       row-gap: var(--#{$key}, #{$value});
     }
   }
 
-  /* Gap-y */
-   @include generate-compound-classes($spacings, gap-y, '', $bkpt-suffix) using
+  /* gap-y */
+  @include generate-compound-classes($spacings, gap-y, '', $bkpt-suffix) using
     ($key, $value, $prefix, $suffix, $bkpt-suffix, $i) {
     .#{$prefix}#{$i}#{$bkpt-suffix} {
       column-gap: var(--#{$key}, #{$value});
