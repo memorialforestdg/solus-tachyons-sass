@@ -41,7 +41,7 @@
 
 // @use "scss/properties/border-radius-props";
 // @use "scss/properties/border-widths-props";
-// @use "scss/properties/box-shadow-props";
+@use 'scss/properties/box-shadow-props';
 // @use "scss/properties/colors-props";
 // @use "scss/properties/font-families-props";
 // @use "scss/properties/heights-props";
@@ -69,8 +69,8 @@
 @use 'scss/modules/border-radius';
 @use 'scss/modules/border-style';
 @use 'scss/modules/border-widths';
+@use 'scss/modules/box-shadow';
 
-// @use 'scss/modules/box-shadow';
 // @use 'scss/modules/code';
 // @use "scss/modules/coordinates";
 // @use "scss/modules/clears";
